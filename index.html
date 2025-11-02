@@ -940,20 +940,31 @@
     </style>
   </head>
   <body>
-    <div class="theme-switcher" onclick="toggleTheme()" aria-label="Toggle theme"></div>
+    <div
+      class="theme-switcher"
+      onclick="toggleTheme()"
+      aria-label="Toggle theme"
+    ></div>
 
     <div class="container">
       <div class="masthead">
-        <h1>Pattern Match</h1>
-        <p class="tagline">Next-Gen Algorithm Visualization</p>
+        <h1>String Matching Visualizer</h1>
       </div>
 
       <div class="mode-selector">
-        <button class="mode-btn active" onclick="switchMode(0)" aria-label="Live Visualization mode">
-          ⚡ Live Visualization
+        <button
+          class="mode-btn active"
+          onclick="switchMode(0)"
+          aria-label="Live Visualization mode"
+        >
+          Live Visualization
         </button>
-        <button class="mode-btn" onclick="switchMode(1)" aria-label="Algorithm Theory mode">
-          📖 Algorithm Theory
+        <button
+          class="mode-btn"
+          onclick="switchMode(1)"
+          aria-label="Algorithm Theory mode"
+        >
+          Algorithm Theory
         </button>
       </div>
 
@@ -962,12 +973,22 @@
           <div class="dual-input">
             <div class="field" id="textField">
               <label for="textSeq">Text Sequence</label>
-              <input type="text" id="textSeq" value="ABABDABACDABABCABAB" aria-label="Text sequence input" />
+              <input
+                type="text"
+                id="textSeq"
+                value="ABABDABACDABABCABAB"
+                aria-label="Text sequence input"
+              />
               <div class="error-message">Please enter a text sequence</div>
             </div>
             <div class="field" id="patternField">
               <label for="patSeq">Pattern Target</label>
-              <input type="text" id="patSeq" value="ABABCABAB" aria-label="Pattern sequence input" />
+              <input
+                type="text"
+                id="patSeq"
+                value="ABABCABAB"
+                aria-label="Pattern sequence input"
+              />
               <div class="error-message">Please enter a pattern sequence</div>
             </div>
           </div>
@@ -975,37 +996,84 @@
 
         <div class="panel">
           <div class="toolbar">
-            <select class="algo-picker" id="algoPick" aria-label="Select algorithm">
+            <select
+              class="algo-picker"
+              id="algoPick"
+              aria-label="Select algorithm"
+            >
               <option value="kmp">KMP Algorithm</option>
               <option value="bm">Boyer-Moore Algorithm</option>
             </select>
-            <button class="action-btn btn-run" id="runBtn" onclick="toggleRun()" aria-label="Run visualization">
+            <button
+              class="action-btn btn-run"
+              id="runBtn"
+              onclick="toggleRun()"
+              aria-label="Run visualization"
+            >
               ▶ Run
             </button>
-            <button class="action-btn btn-next" onclick="advance()" aria-label="Next step">
+            <button
+              class="action-btn btn-next"
+              onclick="advance()"
+              aria-label="Next step"
+            >
               → Next
             </button>
-            <button class="action-btn btn-restart" onclick="restart()" aria-label="Restart visualization">
+            <button
+              class="action-btn btn-restart"
+              onclick="restart()"
+              aria-label="Restart visualization"
+            >
               ⟲ Restart
             </button>
             <div class="velocity-control">
               <label for="velSlider">Velocity</label>
-              <input type="range" id="velSlider" min="100" max="2000" value="1000" step="100" oninput="adjustVelocity()" aria-label="Animation speed" />
-              <span class="velocity-display" id="velDisplay" aria-live="polite">1.0x</span>
+              <input
+                type="range"
+                id="velSlider"
+                min="100"
+                max="2000"
+                value="1000"
+                step="100"
+                oninput="adjustVelocity()"
+                aria-label="Animation speed"
+              />
+              <span class="velocity-display" id="velDisplay" aria-live="polite"
+                >1.0x</span
+              >
             </div>
           </div>
         </div>
 
         <div class="panel stage">
-          <div class="sequence" id="textSeqDisplay" role="region" aria-label="Text sequence visualization">
+          <div
+            class="sequence"
+            id="textSeqDisplay"
+            role="region"
+            aria-label="Text sequence visualization"
+          >
             <div class="pattern-shift-indicator" id="shiftIndicator"></div>
           </div>
-          <div class="sequence" id="patSeqDisplay" role="region" aria-label="Pattern sequence visualization"></div>
-          <div class="broadcast" id="broadcastMsg" role="status" aria-live="polite">
+          <div
+            class="sequence"
+            id="patSeqDisplay"
+            role="region"
+            aria-label="Pattern sequence visualization"
+          ></div>
+          <div
+            class="broadcast"
+            id="broadcastMsg"
+            role="status"
+            aria-live="polite"
+          >
             Hit Run to begin visualization
           </div>
 
-          <div class="indicators" role="list" aria-label="Visualization indicators">
+          <div
+            class="indicators"
+            role="list"
+            aria-label="Visualization indicators"
+          >
             <div class="indicator" role="listitem">
               <div class="indicator-icon active"></div>
               <span class="indicator-label">Scanning</span>
@@ -1025,7 +1093,7 @@
           </div>
 
           <div class="insight">
-            <h4>💡 Analysis</h4>
+            <h4>Analysis</h4>
             <p id="insightText">
               Press Run or Next to start the pattern matching visualization
             </p>
@@ -1033,30 +1101,50 @@
 
           <div class="metrics">
             <div class="metric">
-              <div class="metric-num" id="metricStep" aria-label="Current step">0</div>
+              <div class="metric-num" id="metricStep" aria-label="Current step">
+                0
+              </div>
               <div class="metric-name">Step</div>
             </div>
             <div class="metric">
-              <div class="metric-num" id="metricComp" aria-label="Number of comparisons">0</div>
+              <div
+                class="metric-num"
+                id="metricComp"
+                aria-label="Number of comparisons"
+              >
+                0
+              </div>
               <div class="metric-name">Comparisons</div>
             </div>
             <div class="metric">
-              <div class="metric-num" id="metricShift" aria-label="Number of shifts">0</div>
+              <div
+                class="metric-num"
+                id="metricShift"
+                aria-label="Number of shifts"
+              >
+                0
+              </div>
               <div class="metric-name">Shifts</div>
             </div>
             <div class="metric">
-              <div class="metric-num" id="metricMatch" aria-label="Number of matches">0</div>
+              <div
+                class="metric-num"
+                id="metricMatch"
+                aria-label="Number of matches"
+              >
+                0
+              </div>
               <div class="metric-name">Matches</div>
             </div>
           </div>
 
           <div class="match-history hidden" id="matchHistory">
-            <h4>📍 Match History</h4>
+            <h4>Match History</h4>
             <div id="matchList"></div>
           </div>
 
           <div class="data-section">
-            <h3 class="section-head" id="dataHead">📊 LPS Array</h3>
+            <h3 class="section-head" id="dataHead">LPS Array</h3>
             <div class="data-grid" id="dataDisplay"></div>
             <div class="data-note" id="dataDesc"></div>
           </div>
@@ -1085,7 +1173,10 @@
 
       function toggleTheme() {
         document.body.classList.toggle("light-mode");
-        localStorage.setItem("theme", document.body.classList.contains("light-mode") ? "light" : "dark");
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("light-mode") ? "light" : "dark"
+        );
       }
 
       if (localStorage.getItem("theme") === "light") {
@@ -1106,35 +1197,35 @@
         let isValid = true;
         const textField = document.getElementById("textField");
         const patternField = document.getElementById("patternField");
-        
+
         if (!document.getElementById("textSeq").value.trim()) {
           textField.classList.add("error");
           isValid = false;
         } else {
           textField.classList.remove("error");
         }
-        
+
         if (!document.getElementById("patSeq").value.trim()) {
           patternField.classList.add("error");
           isValid = false;
         } else {
           patternField.classList.remove("error");
         }
-        
+
         return isValid;
       }
 
       function showKnowledge() {
         const kmpText = `
-          <h3>🔍 Knuth-Morris-Pratt (KMP) Algorithm</h3>
+          <h3> Knuth-Morris-Pratt (KMP) Algorithm</h3>
           
           <p><strong>Time Complexity:</strong> O(n + m) - Linear time</p>
           <p><strong>Space Complexity:</strong> O(m) - For LPS array</p>
           
-          <h3>📖 How It Works</h3>
+          <h3> How It Works</h3>
           <p>KMP algorithm is a pattern searching algorithm that uses the concept of <strong>Longest Proper Prefix which is also Suffix (LPS)</strong>. The key idea is to avoid re-examining characters that we know will match anyway.</p>
           
-          <h3>🔄 Step-by-Step Process</h3>
+          <h3>Step-by-Step Process</h3>
           <ol>
             <li><strong>Preprocessing Phase:</strong> Build the LPS array from the pattern</li>
             <li><strong>Searching Phase:</strong> Compare pattern with text using two pointers</li>
@@ -1143,18 +1234,18 @@
             <li><strong>Complete Match:</strong> Report position and continue searching</li>
           </ol>
           
-          <h3>💡 Key Innovation</h3>
+          <h3>Key Innovation</h3>
           <p>When a mismatch occurs, instead of starting from the beginning of the pattern, KMP uses the LPS array to jump to a position where the pattern might still match. This eliminates redundant comparisons.</p>
           
           <div class="example-box">
-            <h4>📝 Example:</h4>
+            <h4>Example:</h4>
             <p>Text: <code>ABABDABACDABABCABAB</code></p>
             <p>Pattern: <code>ABABCABAB</code></p>
             <p>LPS Array: <code>[0, 0, 1, 2, 0, 1, 2, 3, 4]</code></p>
             <p>When mismatch occurs at position 5, instead of restarting from 0, we jump to position 2 based on LPS[4] = 2.</p>
           </div>
           
-          <h3>✅ Advantages</h3>
+          <h3>Advantages</h3>
           <ul>
             <li>Guaranteed linear time performance</li>
             <li>No character in the text is examined more than once</li>
@@ -1162,14 +1253,14 @@
             <li>Ideal for streaming data where you can't go backwards</li>
           </ul>
           
-          <h3>❌ Disadvantages</h3>
+          <h3>Disadvantages</h3>
           <ul>
             <li>Requires O(m) extra space for LPS array</li>
             <li>Preprocessing time adds overhead for short texts</li>
             <li>Complex to implement correctly</li>
           </ul>
           
-          <h3>🌍 Real-World Applications</h3>
+          <h3>Real-World Applications</h3>
           <ul>
             <li><strong>Text Editors:</strong> Find and replace functionality</li>
             <li><strong>Bioinformatics:</strong> DNA sequence matching</li>
@@ -1177,7 +1268,7 @@
             <li><strong>Search Engines:</strong> Pattern matching in documents</li>
           </ul>
           
-          <h3>🎯 When to Use KMP</h3>
+          <h3> When to Use KMP</h3>
           <p>Choose KMP when:</p>
           <ul>
             <li>The pattern has many repeating characters</li>
@@ -1188,15 +1279,15 @@
         `;
 
         const bmText = `
-          <h3>🔍 Boyer-Moore Algorithm</h3>
+          <h3>Boyer-Moore Algorithm</h3>
           
           <p><strong>Time Complexity:</strong> O(n/m) best case, O(nm) worst case</p>
           <p><strong>Space Complexity:</strong> O(k) - Where k is alphabet size</p>
           
-          <h3>📖 How It Works</h3>
+          <h3>How It Works</h3>
           <p>Boyer-Moore is a powerful string matching algorithm that compares the pattern to the text from <strong>right to left</strong>. It uses two heuristics to determine how far to jump when a mismatch occurs.</p>
           
-          <h3>🔄 Step-by-Step Process</h3>
+          <h3> Step-by-Step Process</h3>
           <ol>
             <li><strong>Preprocessing:</strong> Build bad character table</li>
             <li><strong>Alignment:</strong> Align pattern with text</li>
@@ -1205,7 +1296,7 @@
             <li><strong>On Match:</strong> Continue comparing leftwards</li>
           </ol>
           
-          <h3>💡 Bad Character Rule</h3>
+          <h3> Bad Character Rule</h3>
           <p>When a mismatch occurs at position j in the pattern with character c in the text:</p>
           <ul>
             <li>If c exists in pattern: Shift so pattern[j] aligns with rightmost c</li>
@@ -1213,14 +1304,14 @@
           </ul>
           
           <div class="example-box">
-            <h4>📝 Example:</h4>
+            <h4>Example:</h4>
             <p>Text: <code>HERE IS A SIMPLE EXAMPLE</code></p>
             <p>Pattern: <code>EXAMPLE</code></p>
             <p>Bad Character Table: E:6, A:5, P:4, L:2, M:1</p>
             <p>When comparing with 'S' at position 8, since 'S' is not in pattern, we can shift 7 positions to skip it entirely.</p>
           </div>
           
-          <h3>✅ Advantages</h3>
+          <h3>Advantages</h3>
           <ul>
             <li>Often faster than linear time in practice</li>
             <li>Excellent with large alphabets</li>
@@ -1228,7 +1319,7 @@
             <li>Best choice for long patterns</li>
           </ul>
           
-          <h3>❌ Disadvantages</h3>
+          <h3> Disadvantages</h3>
           <ul>
             <li>Worst-case O(nm) time complexity</li>
             <li>Requires space for bad character table</li>
@@ -1236,7 +1327,7 @@
             <li>Preprocessing overhead for short patterns</li>
           </ul>
           
-          <h3>🌍 Real-World Applications</h3>
+          <h3>Real-World Applications</h3>
           <ul>
             <li><strong>grep:</strong> Unix text search utility</li>
             <li><strong>Text Editors:</strong> Advanced search features</li>
@@ -1244,7 +1335,7 @@
             <li><strong>Spell Checkers:</strong> Word matching</li>
           </ul>
           
-          <h3>🎯 When to Use Boyer-Moore</h3>
+          <h3>When to Use Boyer-Moore</h3>
           <p>Choose Boyer-Moore when:</p>
           <ul>
             <li>The alphabet is large (like ASCII/Unicode)</li>
@@ -1257,13 +1348,14 @@
         const algo = document.getElementById("algoPick").value;
         let content = kmpText;
         if (algo === "bm") content = bmText;
-        
+
         document.getElementById("knowledgeContent").innerHTML = content;
       }
 
       function adjustVelocity() {
         velocity = parseInt(document.getElementById("velSlider").value);
-        document.getElementById("velDisplay").textContent = ((2100 - velocity) / 1000).toFixed(1) + "x";
+        document.getElementById("velDisplay").textContent =
+          ((2100 - velocity) / 1000).toFixed(1) + "x";
       }
 
       function buildLPS(seq) {
@@ -1338,7 +1430,9 @@
               offset: i - j,
               complete: true,
               msg: `🎉 Pattern found at index ${i - j}!`,
-              exp: `<strong>Success!</strong> Complete match at position ${i - j}.`,
+              exp: `<strong>Success!</strong> Complete match at position ${
+                i - j
+              }.`,
               comps,
               shifts,
               found: found.length,
@@ -1470,12 +1564,19 @@
         if (matchHistory.length > 0) {
           document.getElementById("matchHistory").classList.remove("hidden");
           const matchList = document.getElementById("matchList");
-          matchList.innerHTML = matchHistory.map(pos => `
+          matchList.innerHTML = matchHistory
+            .map(
+              (pos) => `
             <div class="match-item">
               <span class="match-position">Position: ${pos}</span>
-              <span class="match-text">${textData.substring(pos, pos + patternData.length)}</span>
+              <span class="match-text">${textData.substring(
+                pos,
+                pos + patternData.length
+              )}</span>
             </div>
-          `).join('');
+          `
+            )
+            .join("");
         }
       }
 
@@ -1484,10 +1585,13 @@
 
         const step = steps[position];
 
+        // Update pattern shift indicator
         const shiftIndicator = document.getElementById("shiftIndicator");
         if (step.offset !== undefined) {
           shiftIndicator.style.left = `${step.offset * 65 + 27.5}px`;
-          shiftIndicator.style.width = `${patternData.length * 65 + (patternData.length - 1) * 10}px`;
+          shiftIndicator.style.width = `${
+            patternData.length * 65 + (patternData.length - 1) * 10
+          }px`;
           shiftIndicator.classList.add("active");
         }
 
@@ -1507,7 +1611,9 @@
           }
           txtHTML += `<div class="${cls}">${textData[i]}<div class="pos">${i}</div></div>`;
         }
-        document.getElementById("textSeqDisplay").innerHTML = txtHTML + '<div class="pattern-shift-indicator" id="shiftIndicator"></div>';
+        document.getElementById("textSeqDisplay").innerHTML =
+          txtHTML +
+          '<div class="pattern-shift-indicator" id="shiftIndicator"></div>';
 
         let patHTML = "";
         for (let i = 0; i < step.offset; i++) {
@@ -1524,7 +1630,9 @@
 
         document.getElementById("broadcastMsg").textContent = step.msg;
         document.getElementById("insightText").innerHTML = step.exp;
-        document.getElementById("metricStep").textContent = `${position + 1}/${steps.length}`;
+        document.getElementById("metricStep").textContent = `${position + 1}/${
+          steps.length
+        }`;
         document.getElementById("metricComp").textContent = step.comps || 0;
         document.getElementById("metricShift").textContent = step.shifts || 0;
         document.getElementById("metricMatch").textContent = step.found || 0;
@@ -1542,7 +1650,8 @@
 
       function restart() {
         if (!validateInputs()) {
-          document.getElementById("broadcastMsg").textContent = "Please enter both text and pattern";
+          document.getElementById("broadcastMsg").textContent =
+            "Please enter both text and pattern";
           return;
         }
 
@@ -1567,7 +1676,8 @@
           document.getElementById("dataHead").textContent = "📊 LPS Array";
         } else if (algorithm === "bm") {
           steps = createBMSteps();
-          document.getElementById("dataHead").textContent = "📊 Bad Character Table";
+          document.getElementById("dataHead").textContent =
+            "📊 Bad Character Table";
         }
 
         document.getElementById("matchHistory").classList.add("hidden");
@@ -1617,10 +1727,9 @@
       document.getElementById("patSeq").addEventListener("change", restart);
       document.getElementById("algoPick").addEventListener("change", restart);
 
-      window.onload = function() {
+      window.onload = function () {
         restart();
       };
     </script>
   </body>
-
 </html>
